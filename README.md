@@ -78,18 +78,22 @@ $ git log --oneline
 > **주의** : 이전 이력이 지워지기 때문에 주의가 필요합니다.
 
 ```HTML
-$ git reset [커밋 아이디] # 예) d781824f .. (커밋 아이디의 앞 7자리정도만 복사하면 된다.)
+$ git reset [커밋 아이디] --mixed # 예) d781824f .. (커밋 아이디의 앞 7자리정도만 복사하면 된다.)
 ```
+
+> mixed 옵션을 쓰면 HEAD가 특정 커밋(과거 또는 미래)을 새롭게 가리키게 됩니다. 그리고 staging area도 해당 커밋의 모습과 동일하게 변합니다. 하지만 현재 작업 중인 working directory는 아무런 영향을 받지 않습니다.
 
 ```HTML
 $ git reset [커밋 아이디] --hard
 ```
 
-> 되돌린
+> hard 옵션을 쓰면 HEAD가 특정 커밋(과거 또는 미래)을 새롭게 가리키게 됩니다. 그리고 staging area와 현재 작업 중인 working directory도 해당 커밋의 모습과 동일하게 변합니다.
 
 ```HTML
 $ git reset [커밋 아이디] --soft
 ```
+
+> —soft 옵션을 쓰면 HEAD가 특정 커밋(과거 또는 미래)을 새롭게 가리키게 됩니다. 하지만 현재 작업 중인 working directory와 staging area는 아무런 영향을 받지 않습니다.
 
 | Git Reset의 3가지 옵션 |             1             |             2             |             3             |
 | :--------------------: | :-----------------------: | :-----------------------: | :-----------------------: |
@@ -109,3 +113,7 @@ $ git reset [커밋 아이디] --soft
 ```HTML
 git revert [커밋 아이디]
 ```
+
+## 참고
+
+> [코드잇](https://blog.naver.com/PostView.naver?blogId=codeitofficial&logNo=221950118036&redirect=Dlog&widgetTypeCall=true&directAccess=false) > [Git/Github 안내서][https://subicura.com/git/guide/basic.html]
